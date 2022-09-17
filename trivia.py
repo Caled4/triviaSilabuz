@@ -46,3 +46,41 @@ def display_score(correct_guesses, guesses):
     for i in guesses:
         print(i, end=" ")
     print()
+
+    score = int((correct_guesses / len(questions)) * 100)
+    print("tu puntaje es: " + str(score) + "%")
+
+
+# -------------------------
+def play_again():
+
+    response = input("quieres jugar de nuevo? (yes or no): ")
+    response = response.upper()
+
+    if response == "YES":
+        return True
+    else:
+        return False
+
+
+# -------------------------
+
+questions = {
+    "¿En qué galaxia se encuentra el sistema solar?: ": "A",
+    "que estacion del anho es mas helado?: ": "B",
+    "Python es homenajeado a qué grupo de comedia?: ": "C",
+    "la tierra es redonda?: ": "A"
+}
+
+options = [[
+    "A. Via lactea", "B. Via gasosa", "C. via cholate", "D. reino funji"
+], ["A. primaver", "B. invierno", "C. verano", "D. otonho"],
+           ["A. Lonely Island", "B. Smosh", "C. Monty Python", "D. SNL"],
+           ["A. si ", "B. no", "C. talves", "D. que es la tierra?"]]
+
+new_game()
+
+while play_again():
+    new_game()
+
+print("Byeeeeee!")
